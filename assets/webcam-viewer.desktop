@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Webcam Viewer
+Comment=Preview webcams using GStreamer
+Exec=webcam-viewer
+TryExec=webcam-viewer
+Icon=webcam-viewer
+Terminal=false
+Categories=Video;Graphics;GTK;
