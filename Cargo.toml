@@ -2,6 +2,8 @@
 name = "webcam_viewer"
 version = "0.1.0"
 edition = "2021"
+description = "GTK4 desktop app for viewing webcam streams"
+license = "MIT"
 
 [dependencies]
 gtk4 = { version = "0.7", package = "gtk4" }
@@ -13,3 +15,19 @@ gstreamer-video = "0.21"
 serde = { version = "1", features = ["derive"] }
 toml = "0.8"
 dirs = "5"
+
+[package.metadata.deb]
+maintainer = "Dmitry Belenko <dmitry@belenko.com>"
+section = "video"
+priority = "optional"
+depends = [
+    "libgtk-4-1",
+    "libgstreamer1.0-0",
+    "libgstreamer-plugins-base1.0-0",
+]
+changelog = "assets/changelog"
+assets = [
+    ["target/release/webcam_viewer", "usr/bin/webcam-viewer", "755"],
+    ["assets/webcam-viewer.desktop", "usr/share/applications/", "644"],
+    ["assets/webcam-viewer.svg", "usr/share/icons/hicolor/scalable/apps/", "644"],
+]
